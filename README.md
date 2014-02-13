@@ -45,7 +45,7 @@
   	  	- code coverage
   	  	- parser + code generator
   	  - syntax tree analysis
-  	    - mozilla spider monkey
+  	    - mozilla spidermonkey spec
   - Code Coverage
     - regenerative transformation
       - parses your code, runs your test and figures out how much is tested
@@ -99,7 +99,107 @@
 	  - experiments (canary/chromium)
 	  	- step in candidates
 	  	  - add directories (i.e. `bower`) to not step into
-	  	  
+
+## CORY GACKENHEIMER
+### Unified Widget Theory: Building for Desktop and Mobile
+  - JQ Mobile & JQ UI use the `$.widget` factory
+    - allows author to write extensible widget
+  - anatomy of widget
+    - name
+      - namespace
+    - base
+      - optional
+      - 
+    - prototype
+      - methods for creating, initializing, destroying your widget
+
+## Alex Sexton
+### Hacking Front-End Apps
+  - Content Injection
+    - escaped HTML
+    - `$.text()` excapes HTML while `$.html()` does not
+    - Samy Kamker bug && evercookie
+    - Billy Hoffman whitespace attack
+  - CSS Hacks
+    - privacy and the `:visited` selector
+    - `.getComputedStyle()`
+  - Timing Attacks
+    - correct v incorrect passwords - hashing passwords
+    - security by inaccuracy
+    - `.requestAnimationFrame()` + `:visited` selector === modern timing attacks
+      - time to render
+  - JSON-P
+    - use CORS
+    - ...ajax `xhrFields: { withCredentials: true }`
+    - enable-cors.com
+  - CSRF for forms
+  - Contextis White Paper
+  - we need a fix
+    - Content Securtiy Policy
+  	  - by default dis-allows JS, CSS
+  	- a white list
+  - white listing is security by default
+
+## Kirsten Jones
+### Demistfying REST
+  - HTTPScoop
+    - trace http traffic
+    - or use wireshark
+
+## Greg Franko
+### Building JavaScript Tools
+  - Static Code Analysis tools
+    - analyze code (performance || maintainability || etc., anything)
+  - Plato
+    - code complexity visualization tool
+  - where to start to create your own static code analysis tools
+    - it starts with a `var` and a string
+      - `var foo = "function bar() {}";`
+      - called an abstract syntax tree
+        - an object that represents the structure of tyour code
+        - does not store everything - it is abstract
+  - common AST questions
+    - how to generate an AST?
+      - use a parser library or create your own parser
+      - esprima - http://esprima.org/
+        - js parser the generates ast
+        - can be used in a node.js or web env
+        - adheres to mdn spidermonkey parser
+  - Estraverse
+    - js library that provides AST traversal and update methods
+    - can be used in node.js or web env
+    - adheres to mdn spidermonkey
+  - Escodegen
+    - js library that will generate code from an ast
+    - node.js && web environment
+    - adheres to spidermonkey parsers api
+
+## Rebecca Murphy
+### Ain't no party like a third-party JS Party
+  - BazaarVoice Firebird : product to put ratings/reviews on brand/retailer websites
+  - using a scout file to load resources; relevant to all but mostly to third parties
+  - 'Third Party Javascript' Ben Vinegar & Anton
+  - code defensively -- even if you're first party
+
+## SCOTT GONZÁLEZ
+### jQuery UI: Behind the scenes
+  - WAI-ARIA
+    - hack for auto complete menu
+      - `aria-relelvant=additions`
+        - assertive regions
+        - polite regions
+  - jQUI works closely with standards bodies/browser vendors to create accessbile ui widgets
+  - localization
+    - Globalize (https://github.com/jquery/globalize)
+      - now uses Unicode CLDR (http://cldr.unicode.org/)
+  - `$npm install -g pretty-diff`
+    - colorized diff tool for command line
+
+## Scott Hanselman
+### Javascript and the new VM
+  - there are essentially five computers
+    - amazon, google, rackspace, azure...
+  - msopentech (http://vmdepot.msopentech.com/List/Index)
 
 
 
