@@ -39,6 +39,8 @@
   - http://esprima.org/
   - phantomjs
   - Istanbul https://github.com/gotwarlost/istanbul
+  - Plato (https://github.com/es-analysis/plato)
+    - http://ariya.ofilabs.com/2013/01/javascript-code-complexity-visualization.html (https://github.com/es-analysis/plato)
   - Utility Belt
   	  - dynamic analysis
   	  	- function instrumentation
@@ -200,6 +202,154 @@
   - there are essentially five computers
     - amazon, google, rackspace, azure...
   - msopentech (http://vmdepot.msopentech.com/List/Index)
+  - think about the many clients as virtual machine farm
+
+## Monica Piotrowicz
+### Accessibility (a11y) A feature you can build
+  - WCAG 2.0 AA (accessibility standard)
+  - assistive tools to consider
+    - screen readers
+    - bumped font size
+    - braile readers
+  - accessibility != checklist
+  - color checker
+    - test for color blindness
+  - ARIA widget roles
+    - tooltip
+    - slider
+    - tab
+      - `tablist` : `tabpanel`
+    - .etc
+  - ARIA `aria-label`
+    - correlates a wraper to an element
+  - single page application
+    - ARIA roles can "force" screen reader to pick up new page
+
+## Jason Strimpel
+### Unit Testing a client-server AMD code base
+  - challenge 1 - choose your tools
+    - grunt-castle
+      - handles requirements; write a config and it handles
+
+## Lon Ingram
+### Functional Reactive Programming w/ jQuery, Flight & Bacon.js
+  - what is functional reactive programming?
+    - functional programming
+      - avoid state, mutation side affects
+      - single input, single out ; always
+    - reative programming
+      - oriented around data flows and propagation of change
+      - commone example: spreadsheets
+        - flow of data with a formula (cell c is equal to the sum of cells a-b)
+
+## Timmy Wilson
+### JQ: Now Ideal for Low Bandwidth
+  - http://en.wikipedia.org/wiki/Jake_Weary
+  - jankfree.org
+  - custom build
+    - remove -effects in lieu of css animations/transitions
+    - remove ajax if it's not needed
+  - `grunt-phantomjs` grunt plugin for phantomjs performance monitoring
+
+## Jarrod Overson
+### Real World Web Components
+  - http://bit.ly/jqcon-webcomponents
+  - HTML imports
+    - `<link rel="import" href="source.html">`
+    - import external HTML element, widget, etc.
+  - Polymer
+    - http://www.polymer-project.org/
+    - satifying way to deal w/ cross platform web components
+  - node webkit
+    - native app wrapper for html/web components
+    - https://github.com/rogerwang/node-webkit
+
+## Danni Friedland
+### NSA.js
+  - github.com/bluehotdog/ruadan
+  - scrolling
+  - mouse movement
+  - screen size
+  - user selection
+  - Mutation Observer (introdcued in DOM level 4)
+    - dom changes
+      - child/root observation
+      - attribute changes
+      - content changes
+      - old/new data
+  - limitations
+    - assets (images, fonts) are hard to serialize
+    - external css
+
+## Vernon Kesner
+### Using Node & Grunt to create and awesome workflow
+  - focus on the tools you use to steal your time back
+    - not a code monkey, get time back to work on oss
+  - node/grunt/istanbul/phantomjs/jasmine
+  - grunt
+    - seperate out your grunt config files
+    - `grunt load tasks`
+    - require grunt modules
+  - contextual jquery
+    - http://vimeo.com/40873228
+    - http://www.slideshare.net/dcneiner/contextual-jquery
+  - two unique workflows
+    - testing cycle, hot fixes, etc.
+      - `grunt preview` task
+        - reverse proxy environments
+        - live data sources
+        - ability to localize any asset or data response
+        - selective compilation
+        - source maps to aid in debugging
+    - new & enhancement features
+      - `grunt local` task
+        - rapid development of components & layouts
+        - living styleguide
+    - both workflows use common components but the approach is distinctly different
+  - selective builds
+
+## Lenny Markus
+### NodeJS in the enterprise
+  - speed up the process
+    - mock up applications with node
+    - use a modern templating engine
+      - dust.js (http://akdubya.github.io/dustjs/)
+      - handlebars
+      - underscore/lodash
+  - Kraken (http://krakenjs.com/)
+    - sits on top of expressjs, just with some added structure and syntactic sugar
+    - out of the box security
+    - scalable
+    - `$ yo kraken` yeoman project template generation
+  - security middleware === Lusca
+    - clickjacking
+    - CSRF
+    - CSP
+    - P3P headers
+  - internationalization === Makara
+    - seperation of templates and content
+  - proxy for private NPM server === Kappa
+    - want to keep your private modules private
+    - want access to the public modules as well
+    - blacklisting certain modules (concern around licensing, malicious)
+      - licence checks in the proxy
+  - best practices
+    - get away from custom stuff, use standards
+    - stop "not written here" syndrome
+      - versions don't evolve
+      - missing out on collective knowledge
+    - Github exposes sacred code
+  - hiccups
+    - shared server understanding
+    - SSL resumption
+      - nginx can terminate SSL into your app
+      - to make https calls you'l want this for performance
+    - scaling and monitoring
+      - use nodejs cluster; cluster2 or pm2 for mngmt
+  - paypal is a nodejs shop
+
+
+
 
 
 
